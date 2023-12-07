@@ -3,6 +3,7 @@ import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { MockController } from './mock/mock.controller';
 
 @Module({
   imports: [
@@ -10,7 +11,7 @@ import { AppService } from './app.service';
       rootPath: join(__dirname, '..', 'public'), // The 'public' directory will contain your index.html
     }),
   ],
-  controllers: [AppController],
+  controllers: [AppController, MockController],
   providers: [AppService],
 })
 export class AppModule {}
