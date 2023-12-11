@@ -1,9 +1,9 @@
-import { Controller, Get, Redirect } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get, Redirect, Res } from '@nestjs/common';
+import { Response } from 'express';
+import { join } from 'path';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
 
   @Get()
   @Redirect('/public', 302) // This redirects to the /public route
