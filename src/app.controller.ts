@@ -16,17 +16,17 @@ export class AppController {
         return res.sendFile(join(__dirname, '..', 'public', 'ad01.html'));
     }
 
-    @Get('ad02/') // Handle the /ad01/ URL
+    @Get('ad02/') // Handle the /ad02/ URL
     getAd02(@Res() res: Response) {
         return res.sendFile(join(__dirname, '..', 'public', 'ad02.html'));
     }
 
-    @Get('ad03/') // Handle the /ad01/ URL
+    @Get('ad03/') // Handle the /ad03/ URL
     getAd03(@Res() res: Response) {
         return res.sendFile(join(__dirname, '..', 'public', 'ad03.html'));
     }
 
-    @Get('ad04/') // Handle the /ad01/ URL
+    @Get('ad04/') // Handle the /ad04/ URL
     getAd04(@Res() res: Response) {
         return res.sendFile(join(__dirname, '..', 'public', 'ad04.html'));
     }
