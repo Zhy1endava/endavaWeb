@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>ChaChing NestJS App</title>
-    <link href="/styles.css" rel="stylesheet" type="text/css">
+    <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="container">
@@ -51,8 +51,8 @@
 </div>
 <script>
     function displayAds() {
-        var ads = document.getElementsByClassName('ad-placeholder');
-        for (var i = 0; i < ads.length; i++) {
+        let ads = document.getElementsByClassName('ad-placeholder');
+        for (let i = 0; i < ads.length; i++) {
             ads[i].classList.remove('hidden-ad');
         }
     }
