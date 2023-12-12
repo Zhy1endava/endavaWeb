@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>ChaChing NestJS App</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="container">
@@ -11,7 +11,8 @@
     <p>This is a proof of concept to preview how ads will be displayed on a webpage.</p>
 
     <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Search...">
+        <label for="search-bar">Search bar dummy</label>
+        <input id="search-bar" placeholder="Search..." type="text">
         <button onclick="displayAds()">Search</button>
         <button onclick="refreshPage()">Refresh Page</button>
     </div>
@@ -22,28 +23,28 @@
         <div class="ad-placeholder hidden-ad">
             <!-- Endava's Ad Server / Banner / 580x400 / Netboard -->
             <ins class="aso-zone" data-zone="108059"></ins>
-            <script data-cfasync="false" async src="https://media.aso1.net/js/code.min.js"></script>
+            <script async data-cfasync="false" src="https://media.aso1.net/js/code.min.js"></script>
             <!-- /Endava's Ad Server -->
         </div>
         <!-- Ad02 -->
         <div class="ad-placeholder hidden-ad">
             <!-- Endava's Ad Server / Banner / 580x400 / Netboard -->
             <ins class="aso-zone" data-zone="108059"></ins>
-            <script data-cfasync="false" async src="https://media.aso1.net/js/code.min.js"></script>
+            <script async data-cfasync="false" src="https://media.aso1.net/js/code.min.js"></script>
             <!-- /Endava's Ad Server -->
         </div>
         <!-- Ad03 -->
         <div class="ad-placeholder hidden-ad">
             <!-- Endava's Ad Server / Banner / 580x400 / Netboard -->
             <ins class="aso-zone" data-zone="108059"></ins>
-            <script data-cfasync="false" async src="https://media.aso1.net/js/code.min.js"></script>
+            <script async data-cfasync="false" src="https://media.aso1.net/js/code.min.js"></script>
             <!-- /Endava's Ad Server -->
         </div>
         <!-- Ad04 -->
         <div class="ad-placeholder hidden-ad">
             <!-- Endava's Ad Server / Banner / 580x400 / Netboard -->
             <ins class="aso-zone" data-zone="108059"></ins>
-            <script data-cfasync="false" async src="https://media.aso1.net/js/code.min.js"></script>
+            <script async data-cfasync="false" src="https://media.aso1.net/js/code.min.js"></script>
             <!-- /Endava's Ad Server -->
         </div>
     </div>
@@ -57,7 +58,7 @@
     }
 
     function refreshPage() {
-            window.location.reload();
+        window.location.reload();
     }
 </script>
 </body>

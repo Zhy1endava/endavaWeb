@@ -1,13 +1,14 @@
-import { Module } from '@nestjs/common';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
+import {Module} from '@nestjs/common';
+import {ServeStaticModule} from '@nestjs/serve-static';
+import {join} from 'path';
 
 @Module({
-  imports: [
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public'),
-    }),
-  ],
-  // ... other configurations ...
+    imports: [
+        ServeStaticModule.forRoot({
+            rootPath: join(__dirname, '..', 'public'),
+        }),
+    ],
+    // ... other configurations ...
 })
-export class AppModule {}
+export class AppModule {
+}
