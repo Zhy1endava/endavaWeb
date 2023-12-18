@@ -5,6 +5,7 @@
     <link href="styles.css" rel="stylesheet" type="text/css">
     <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
     <script data-cfasync="false" async="" type="text/javascript" src="//media.aso1.net/js/code.min.js"></script>
+
     <script>
         var _aso = _aso || {};
         _aso.debug = true;
@@ -47,25 +48,15 @@
                 // Capture the search input value
                 var searchValue = $('#search-bar').val().trim();
 
-                // Determine the zoneId based on the search value
-                var zoneId;
-                if (searchValue === '') {
-                    zoneId = 111111; // random Zone ID when empty
-                } else if (searchValue.toLowerCase() === 'white sneakers') {
-                    zoneId = 108397; // Zone ID for white sneakers
-                } else {
-                    zoneId = 108180; // Zone ID for everything else
-                }
-
                 // Clear all before loading
                 clearAll();
 
                 // Load ads based on zone and keywords value
                 adDivs.forEach(function(adDiv) {
-                    _ASO.loadAd(adDiv, zoneId, true, {
+                    _ASO.loadAd(adDiv, 108180, true, {
                         attr: {
-                            tags: ["hard_coded_tag"],
-                            bla_bla: ["random_tag"],
+                            // tags: ["hard_coded_tag"],
+                            // bla_bla: ["random_tag"],
                             keywords: [searchValue]
                         }
                     });
