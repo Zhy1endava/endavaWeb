@@ -3,6 +3,79 @@
 <head>
     <title>ChaChing NestJS App</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script data-cfasync="false" async="" type="text/javascript" src="//media.aso1.net/js/code.min.js"></script>
+    <script>
+        var _aso = _aso || {};
+        _aso.debug = true;
+
+        $(function () {
+            // Event listener for the search button click
+            $('#search-button').on('click', function () {
+                // Your existing search button logic
+                performSearch();
+            });
+
+            // Event listener for keypress in the search input field
+            $('#search-bar').on('keypress', function (e) {
+                // Check if the pressed key is 'Enter'
+                if (e.which == 13) {
+                    // Prevent the default action of the Enter key
+                    e.preventDefault();
+
+                    // Trigger the search button's click event
+                    $('#search-button').click();
+                }
+            });
+
+            // Function containing the search logic
+            function performSearch() {
+
+                // Capture the search input value
+                var searchValue = $('#search-bar').val();
+
+                // Determine the zoneId based on the search value
+                var zoneId;
+                if ('white sneakers' === searchValue.toLowerCase()) {
+                    zoneId = 108397; // Zone ID for white sneakers
+                } else {
+                    zoneId = 108180; // Zone ID for everything else
+                };
+
+                // Example code to load an ad (you can modify or remove this)
+                _ASO.loadAd('ad01', zoneId, true, { // HTML ID, Zone ID, async, params
+                    attr: {
+                        keywords: [searchValue]
+                    }
+                });
+                _ASO.loadAd('ad02', zoneId, true, { // HTML ID, Zone ID, async, params
+                    attr: {
+                        keywords: [searchValue]
+                    }
+                });
+                _ASO.loadAd('ad03', zoneId, true, { // HTML ID, Zone ID, async, params
+                    attr: {
+                        keywords: [searchValue]
+                    }
+                });
+                _ASO.loadAd('ad04', zoneId, true, { // HTML ID, Zone ID, async, params
+                    attr: {
+                        keywords: [searchValue]
+                    }
+                });
+                _ASO.loadAd('ad05', zoneId, true, { // HTML ID, Zone ID, async, params
+                    attr: {
+                        keywords: [searchValue]
+                    }
+                });
+                _ASO.loadAd('ad06', zoneId, true, { // HTML ID, Zone ID, async, params
+                    attr: {
+                        keywords: [searchValue]
+                    }
+                });
+            }
+        });
+    </script>
 </head>
 <body>
 <div class="container">
@@ -13,41 +86,32 @@
     <div class="search-container">
         <label for="search-bar">Search bar dummy</label>
         <input id="search-bar" placeholder="Search..." type="text">
-        <button onclick="displayAds()">Search</button>
+        <button id="search-button" >Search</button>
         <button onclick="refreshPage()">Refresh Page</button>
     </div>
 
     <div class="ads-container">
         <!-- Ad01 -->
-        <div class="ad-placeholder hidden-ad">
-            <ins class="aso-zone" data-zone="108180"></ins>
-            <script async data-cfasync="false" src="https://media.aso1.net/js/code.min.js"></script>
+        <div id='ad01' class="ad-placeholder">
         </div>
         <!-- Ad02 -->
-        <div class="ad-placeholder hidden-ad">
-            <ins class="aso-zone" data-zone="108180"></ins>
-            <script async data-cfasync="false" src="https://media.aso1.net/js/code.min.js"></script>
+        <div id='ad02' class="ad-placeholder">
         </div>
         <!-- Ad03 -->
-        <div class="ad-placeholder hidden-ad">
-            <ins class="aso-zone" data-zone="108180"></ins>
-            <script async data-cfasync="false" src="https://media.aso1.net/js/code.min.js"></script>
+        <div id='ad03' class="ad-placeholder">
         </div>
         <!-- Ad04 -->
-        <div class="ad-placeholder hidden-ad">
-            <ins class="aso-zone" data-zone="108180"></ins>
-            <script async data-cfasync="false" src="https://media.aso1.net/js/code.min.js"></script>
+        <div id='ad04' class="ad-placeholder">
+        </div>
+        <!-- Ad05 -->
+        <div id='ad05' class="ad-placeholder">
+        </div>
+        <!-- Ad06 -->
+        <div id='ad06' class="ad-placeholder">
         </div>
     </div>
 </div>
 <script>
-    function displayAds() {
-        let ads = document.getElementsByClassName('ad-placeholder');
-        for (let i = 0; i < ads.length; i++) {
-            ads[i].classList.remove('hidden-ad');
-        }
-    }
-
     function refreshPage() {
         window.location.reload();
     }
