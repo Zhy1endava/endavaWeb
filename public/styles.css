@@ -6,16 +6,20 @@ body {
     text-align: center;
 }
 
-/*.container {*/
-/*    width: 80%;*/
-/*    margin: 0 auto;*/
-/*    padding: 20px;*/
-/*}*/
-
 .container {
     width: 50%;
     margin: 0 auto;
     padding: 20px;
+}
+
+.info-box {
+    background-color: #f8f9fa; /* Light background color */
+    border-left: 4px solid #FF0000; /* Highlight line on the left */
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333; /* Text color */
+    border-radius: 4px;
 }
 
 .search-container {
@@ -29,28 +33,12 @@ body {
     border: 1px solid #ddd;
 }
 
-/*.ads-container {*/
-/*    display: grid;*/
-/*    grid-template-columns: repeat(auto-fill, minmax(580px, 1fr));*/
-/*    gap: 20px;*/
-/*    padding: 20px 0;*/
-/*}*/
-
 .ads-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px 0;
 }
-
-/*.ad-placeholder {*/
-/*    width: 580px;*/
-/*    height: 400px;*/
-/*    background-color: #fff;*/
-/*    border: 1px solid #ddd;*/
-/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);*/
-/*    margin: 0 auto; !* Center the ad in the grid cell *!*/
-/*}*/
 
 .ad-placeholder {
     width: 200px;
