@@ -8,7 +8,9 @@
 
     <script>
         var _aso = _aso || {};
-        _aso.debug = true;
+        _aso.debug = false;
+
+        var searchValue;
         // Array of ad div IDs
         var adDivs = ['ad01', 'ad02', 'ad03', 'ad04', 'ad05', 'ad06'];
 
@@ -36,7 +38,6 @@
                 if (e.which == 13) {
                     // Prevent the default action of the Enter key
                     e.preventDefault();
-
                     // Trigger the search button's click event
                     $('#search-button').click();
                 }
@@ -44,19 +45,14 @@
 
             // Function containing the search logic
             function performSearch() {
-
-                // Capture the search input value
-                var searchValue = $('#search-bar').val().trim();
-
                 // Clear all before loading
                 clearAll();
-
+                // Capture the search input value
+                searchValue = $('#search-bar').val().trim().toLowerCase();
                 // Load ads based on zone and keywords value
                 adDivs.forEach(function (adDiv) {
                     _ASO.loadAd(adDiv, 108180, true, {
                         attr: {
-                            // tags: ["hard_coded_tag"],
-                            // bla_bla: ["random_tag"],
                             keywords: [searchValue]
                         }
                     });
