@@ -8,11 +8,24 @@
     <script>
         var _aso = _aso || {};
         _aso.debug = true;
+        // Array of ad div IDs
+        var adDivs = ['ad01', 'ad02', 'ad03', 'ad04', 'ad05', 'ad06'];
+
+        function refreshPage() {
+            window.location.reload();
+        }
+
+        function clearAll() {
+            adDivs.forEach(function(adDiv) {
+                var div = $("#" + adDiv);
+                div.empty(); // Clear the content of the div
+                div.attr('class', 'ad-placeholder'); // Reset the class to 'ad-placeholder'
+            });
+        }
 
         $(function () {
             // Event listener for the search button click
             $('#search-button').on('click', function () {
-                // Your existing search button logic
                 performSearch();
             });
 
@@ -32,46 +45,30 @@
             function performSearch() {
 
                 // Capture the search input value
-                var searchValue = $('#search-bar').val();
+                var searchValue = $('#search-bar').val().trim();
 
                 // Determine the zoneId based on the search value
                 var zoneId;
-                if ('white sneakers' === searchValue.toLowerCase()) {
+                if (searchValue === '') {
+                    zoneId = 111111; // random Zone ID when empty
+                } else if (searchValue.toLowerCase() === 'white sneakers') {
                     zoneId = 108397; // Zone ID for white sneakers
                 } else {
                     zoneId = 108180; // Zone ID for everything else
-                };
+                }
 
-                // Example code to load an ad (you can modify or remove this)
-                _ASO.loadAd('ad01', zoneId, true, { // HTML ID, Zone ID, async, params
-                    attr: {
-                        keywords: [searchValue]
-                    }
-                });
-                _ASO.loadAd('ad02', zoneId, true, { // HTML ID, Zone ID, async, params
-                    attr: {
-                        keywords: [searchValue]
-                    }
-                });
-                _ASO.loadAd('ad03', zoneId, true, { // HTML ID, Zone ID, async, params
-                    attr: {
-                        keywords: [searchValue]
-                    }
-                });
-                _ASO.loadAd('ad04', zoneId, true, { // HTML ID, Zone ID, async, params
-                    attr: {
-                        keywords: [searchValue]
-                    }
-                });
-                _ASO.loadAd('ad05', zoneId, true, { // HTML ID, Zone ID, async, params
-                    attr: {
-                        keywords: [searchValue]
-                    }
-                });
-                _ASO.loadAd('ad06', zoneId, true, { // HTML ID, Zone ID, async, params
-                    attr: {
-                        keywords: [searchValue]
-                    }
+                // Clear all before loading
+                clearAll();
+
+                // Load ads based on zone and keywords value
+                adDivs.forEach(function(adDiv) {
+                    _ASO.loadAd(adDiv, zoneId, true, {
+                        attr: {
+                            tags: ["hard_coded_tag"],
+                            bla_bla: ["random_tag"],
+                            keywords: [searchValue]
+                        }
+                    });
                 });
             }
         });
@@ -111,10 +108,5 @@
         </div>
     </div>
 </div>
-<script>
-    function refreshPage() {
-        window.location.reload();
-    }
-</script>
 </body>
 </html>
