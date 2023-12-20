@@ -31,22 +31,22 @@ export class AppController {
         return res.sendFile(join(__dirname, '..', 'public', 'ad04.html'));
     }
 
-    @Get('ad01/') // Handle the /ad01/ URL
+    @Get('kw_ad1/') // Handle the /ad01/ URL
     getKwAd01(@Res() res: Response) {
         return res.sendFile(join(__dirname, '..', 'public', 'kw_ad1.html'));
     }
 
-    @Get('ad02/') // Handle the /ad02/ URL
+    @Get('kw_ad2/') // Handle the /ad02/ URL
     getKwAd02(@Res() res: Response) {
         return res.sendFile(join(__dirname, '..', 'public', 'kw_ad2.html'));
     }
 
-    @Get('ad03/') // Handle the /ad03/ URL
+    @Get('kw_ad3/') // Handle the /ad03/ URL
     getKwAd03(@Res() res: Response) {
         return res.sendFile(join(__dirname, '..', 'public', 'kw_ad3.html'));
     }
 
-    @Get('ad04/') // Handle the /ad04/ URL
+    @Get('kw_ad4/') // Handle the /ad04/ URL
     getKwAd04(@Res() res: Response) {
         return res.sendFile(join(__dirname, '..', 'public', 'kw_ad4.html'));
     }
